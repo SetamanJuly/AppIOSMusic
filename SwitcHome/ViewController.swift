@@ -60,11 +60,11 @@ class ViewController: UIViewController {
 }
     func LoginTrue() {
         
-        let urlHardcoded = URL(string:"h2744356.stratoserver.net/domotics/serverIoTApi/public/index.php/users/login.json")
+        let urlHardcoded = URL(string:"http://h2744356.stratoserver.net/domotics/serverIoTApi/public/index.php/users/login.json")
         let parameters: Parameters = [
             "user":"",
             "password":""
-        ]
+                ]
         
         Alamofire.request(urlHardcoded!, method: .get, parameters: parameters).responseJSON(completionHandler: {response in
             print("Request :: \(String(describing:response.request))")
