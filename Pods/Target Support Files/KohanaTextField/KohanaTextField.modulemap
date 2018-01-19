@@ -1,0 +1,6 @@
+framework module KohanaTextField {
+  umbrella header "KohanaTextField-umbrella.h"
+
+  export *
+  module * { export * }
+}
