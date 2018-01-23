@@ -7,32 +7,28 @@
 //
 
 import UIKit
+import TextFieldEffects
 
 class RegisterViewController: UIViewController {
 
     @IBOutlet weak var RegisterButton: UIButton!
+    @IBOutlet weak var nameTextField: AkiraTextField!
+    @IBOutlet weak var emailTextField: AkiraTextField!
+    @IBOutlet weak var passwordTextField: AkiraTextField!
+    @IBOutlet weak var repeatPasswordTextField: AkiraTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameTextField.backgroundColor = UIColor.clear
+        emailTextField.backgroundColor = UIColor.clear
+        passwordTextField.backgroundColor = UIColor.clear
+        repeatPasswordTextField.backgroundColor = UIColor.clear
+        RegisterButton.layer.cornerRadius = 20
         
-        RegisterButton.layer.cornerRadius = 15
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
