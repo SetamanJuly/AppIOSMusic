@@ -10,7 +10,10 @@
 		3F1AE7822015900400A396CA /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1AE7812015900400A396CA /* LogInViewController.swift */; };
 		3F1AE7A62015A41A00A396CA /* RequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1AE7A52015A41A00A396CA /* RequestController.swift */; };
 		3F1AE7A82015A4C400A396CA /* JSONhttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1AE7A72015A4C400A396CA /* JSONhttp.swift */; };
+		3F491121201826150021729A /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F491120201826150021729A /* RecoverPasswordViewController.swift */; };
 		3FDCDFFF20163264005F9806 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDCDFFE20163264005F9806 /* DataManager.swift */; };
+		3FE1732920178B3500EA5C10 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1732820178B3500EA5C10 /* MainViewController.swift */; };
+		3FE1732E2017C9B200EA5C10 /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1732D2017C9B200EA5C10 /* GlobalFunctions.swift */; };
 		3FFE972E2016DEF900A0CC17 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE972D2016DEF900A0CC17 /* Data.swift */; };
 		7FBF471C200FBCF9005F0DC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBF471B200FBCF9005F0DC4 /* AppDelegate.swift */; };
 		7FBF471E200FBCF9005F0DC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBF471D200FBCF9005F0DC4 /* ViewController.swift */; };
@@ -29,7 +32,10 @@
 		3F1AE7812015900400A396CA /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		3F1AE7A52015A41A00A396CA /* RequestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestController.swift; sourceTree = "<group>"; };
 		3F1AE7A72015A4C400A396CA /* JSONhttp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONhttp.swift; sourceTree = "<group>"; };
+		3F491120201826150021729A /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
 		3FDCDFFE20163264005F9806 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		3FE1732820178B3500EA5C10 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		3FE1732D2017C9B200EA5C10 /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 		3FFE972D2016DEF900A0CC17 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		7FBF4718200FBCF9005F0DC4 /* SwitcHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwitcHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FBF471B200FBCF9005F0DC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +64,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3FE1732B2017C94B00EA5C10 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3F1AE7812015900400A396CA /* LogInViewController.swift */,
+				7FBF4735200FC601005F0DC4 /* RegisterViewController.swift */,
+				3F491120201826150021729A /* RecoverPasswordViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3FE1732C2017C96500EA5C10 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3F1AE7A52015A41A00A396CA /* RequestController.swift */,
+				3F1AE7A72015A4C400A396CA /* JSONhttp.swift */,
+				3FDCDFFE20163264005F9806 /* DataManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		7FBF470F200FBCF9005F0DC4 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +106,8 @@
 		7FBF471A200FBCF9005F0DC4 /* SwitcHome */ = {
 			isa = PBXGroup;
 			children = (
+				3FE1732C2017C96500EA5C10 /* Services */,
+				3FE1732B2017C94B00EA5C10 /* Login */,
 				7FBF471B200FBCF9005F0DC4 /* AppDelegate.swift */,
 				7FBF471D200FBCF9005F0DC4 /* ViewController.swift */,
 				7FBF471F200FBCF9005F0DC4 /* Main.storyboard */,
@@ -87,12 +115,9 @@
 				7FBF4727200FBCF9005F0DC4 /* LaunchScreen.storyboard */,
 				7FBF472A200FBCF9005F0DC4 /* Info.plist */,
 				7FBF4722200FBCF9005F0DC4 /* SwitcHome.xcdatamodeld */,
-				7FBF4735200FC601005F0DC4 /* RegisterViewController.swift */,
-				3F1AE7812015900400A396CA /* LogInViewController.swift */,
-				3F1AE7A52015A41A00A396CA /* RequestController.swift */,
-				3F1AE7A72015A4C400A396CA /* JSONhttp.swift */,
-				3FDCDFFE20163264005F9806 /* DataManager.swift */,
 				3FFE972D2016DEF900A0CC17 /* Data.swift */,
+				3FE1732820178B3500EA5C10 /* MainViewController.swift */,
+				3FE1732D2017C9B200EA5C10 /* GlobalFunctions.swift */,
 			);
 			path = SwitcHome;
 			sourceTree = "<group>";
@@ -211,7 +236,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5CB5E587EBEBDD102EB180E2 /* [CP] Copy Pods Resources */ = {
@@ -237,14 +262,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SwitcHome/Pods-SwitcHome-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/KohanaTextField/KohanaTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/ZAlertView/ZAlertView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KohanaTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZAlertView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -258,15 +285,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FE1732E2017C9B200EA5C10 /* GlobalFunctions.swift in Sources */,
 				7FBF471E200FBCF9005F0DC4 /* ViewController.swift in Sources */,
 				3FDCDFFF20163264005F9806 /* DataManager.swift in Sources */,
 				7FBF471C200FBCF9005F0DC4 /* AppDelegate.swift in Sources */,
 				7FBF4724200FBCF9005F0DC4 /* SwitcHome.xcdatamodeld in Sources */,
 				3F1AE7A62015A41A00A396CA /* RequestController.swift in Sources */,
+				3F491121201826150021729A /* RecoverPasswordViewController.swift in Sources */,
 				3F1AE7822015900400A396CA /* LogInViewController.swift in Sources */,
 				3F1AE7A82015A4C400A396CA /* JSONhttp.swift in Sources */,
 				3FFE972E2016DEF900A0CC17 /* Data.swift in Sources */,
 				7FBF4736200FC601005F0DC4 /* RegisterViewController.swift in Sources */,
+				3FE1732920178B3500EA5C10 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

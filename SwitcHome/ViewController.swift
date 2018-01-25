@@ -15,11 +15,11 @@ class ViewController: UIViewController {
     
     
     
-    @IBOutlet weak var LoginButton: UIButton!
+//    @IBOutlet weak var LoginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        LoginButton.layer.cornerRadius = 15
+//        LoginButton.layer.cornerRadius = 15
 //        PasswordField.layer.cornerRadius = 10
 //        UsernameField.layer.cornerRadius = 10
         

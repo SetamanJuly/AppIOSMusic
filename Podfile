@@ -9,4 +9,5 @@ target 'SwitcHome' do
   pod 'TextFieldEffects', '~> 1.4'
   pod 'Toast-Swift', '~> 3.0.1'
   pod 'Alamofire', '~> 4.5'
+  pod 'ZAlertView', '~> 1.0'
 end

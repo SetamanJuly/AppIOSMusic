@@ -7,5 +7,3 @@
 //
 
 import Foundation
-var token: String = ""
-var name: String = ""
