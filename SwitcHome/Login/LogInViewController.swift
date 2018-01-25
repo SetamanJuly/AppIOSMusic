@@ -19,27 +19,27 @@ class LogInViewController: UIViewController {
     
     var toastStyle = ToastStyle() //Estilo del toast
     
-
-    
-    let parameters: [String: Any] = ["name": "test1", "pass": "test12", "email": "test1@test.com"]
-    let headers: [String: String] = ["Content-Type": "application/x-www-form-urlencoded"]
+    //Declaración de un data manager para usar servicios
     let dataManager = DataManager()
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        checkLog()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         nameTextField.backgroundColor = UIColor.clear
         passwordTextField.backgroundColor = UIColor.clear
         loginBTNOulet.layer.cornerRadius = 20
         hideActivityIndicator()
-        
-        toastStyle.backgroundColor = #colorLiteral(red: 0.9764705882, green: 0.9764705882, blue: 0.9764705882, alpha: 1)
+        //Se define el estilo de los toast
+        toastStyle.backgroundColor = #colorLiteral(red: 0.6666666667, green: 0.8235294118, blue: 0.981543839, alpha: 1)
         toastStyle.messageColor = #colorLiteral(red: 0.2666666667, green: 0.2666666667, blue: 0.2666666667, alpha: 1)
+        toastStyle.messageFont = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.bold)
         ToastManager.shared.style = toastStyle
-
-       
+        
+        checkLog()
     }
     @IBAction func loginBTN(_ sender: UIButton) {
-        
+        //Se coimprueban que los campos sean válidos y se hace una llamada a la API
         if (nameTextField.text?.isEmpty)! || (passwordTextField.text?.isEmpty)!{
             self.view.makeToast("Es necesario que todos los parametros esten rellenos", duration: 3.0, position: .top)
             
@@ -52,7 +52,9 @@ class LogInViewController: UIViewController {
 
         
     }
+    
     func login(parameters: [String: Any]){
+        //Se hace la llamada a la API y se filtran los códigos de respuesta
         dataManager.getLogin(params: parameters) { (json) in
             if json.code == 200 {
                 UserDefaults.standard.set(json.data["token"] , forKey: "token")
@@ -68,6 +70,22 @@ class LogInViewController: UIViewController {
         }
     }
     
+    func checkLog() {
+//        if UserDefaults.standard.value(forKey: "token") as! String != "" {
+            dataManager.getAuth { (json) in
+                if json.code == 201 {
+                    self.performSegue(withIdentifier: "goToMain", sender: nil)
+                } else if json.code == 401 || json.code == 419{
+//                    self.view.makeToast(json.message , duration: 3.0, position: .top)
+                    
+                } else if json.code == 400 || json.code == 500 {
+                    print(String(describing:json.message))
+                }
+            }
+//        }
+    }
+    
+    //Funciones para mostrar y quitar el activity indicator
     func showActivityIndicator() {
         loginBTNOulet.isHidden = true
         activityIndicator.startAnimating()

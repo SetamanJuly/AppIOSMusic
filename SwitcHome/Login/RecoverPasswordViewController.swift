@@ -17,30 +17,37 @@ class RecoverPasswordViewController: UIViewController {
     @IBOutlet weak var userName: AkiraTextField!
     @IBOutlet weak var emailTextField: AkiraTextField!
     @IBOutlet weak var recoverPassBTN: UIButton!
-    var dataManager = DataManager()
-   
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    //Declaración de un data manager para usar servicios
+    var dataManager = DataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         recoverPassBTN.layer.cornerRadius = 20
         userName.backgroundColor = UIColor.clear
         emailTextField.backgroundColor = UIColor.clear
+        hideActivityIndicator()
     }
 
     @IBAction func recoverPass(_ sender: UIButton) {
-        
+        //Al pulsar el botón se comprueba si se cumplen las validaciones
         if (userName.text?.isEmpty)! || (emailTextField.text?.isEmpty)!{
             self.view.makeToast("Es necesario que todos los parametros esten rellenos", duration: 3.0, position: .top)
             
         }else if !(emailTextField.text?.isValidEmail())! {
             self.view.makeToast("La contraseña debe tener al menos 6 caracteres", duration: 3.0, position: .top)
         }else{
+            //Al pasar las validaciones se envían los parametros y se hace la llamada a la API
+            showActivityIndicator()
             recoverPass(params: ["name": userName.text!, "email": emailTextField.text!])
         }
     }
     
+    
+    
     func recoverPass(params: [String: Any]) {
+        //Se hace la llamada y se filtran los códigos
         dataManager.getRecoverPass(params: params) { (json) in
             if json.code == 200 {
                 UserDefaults.standard.set(json.data["token"] , forKey: "token")
@@ -50,29 +57,27 @@ class RecoverPasswordViewController: UIViewController {
             } else if json.code == 400 || json.code == 500 {
                 print(String(describing:json))
             }
+            self.hideActivityIndicator()
+            print(String(describing:json))
         }
     }
     
     func buildAndShowPopUp() {
-        
+        //Se crea el alert con un estilo y se muestra
         ZAlertView.textFieldBorderColor = #colorLiteral(red: 0.1058823529, green: 0.6039215686, blue: 0.968627451, alpha: 1)
         ZAlertView.positiveColor = #colorLiteral(red: 0.1058823529, green: 0.6039215686, blue: 0.968627451, alpha: 1)
         ZAlertView.messageColor = #colorLiteral(red: 0.2666666667, green: 0.2666666667, blue: 0.2666666667, alpha: 1)
         ZAlertView.titleColor = #colorLiteral(red: 0.2666666667, green: 0.2666666667, blue: 0.2666666667, alpha: 1)
-        
         
         let dialog = ZAlertView(title: "Cambiar contraseña", message: "Introduce tu nueva contraseña", isOkButtonLeft: false, okButtonText: "CAMBIAR", cancelButtonText: "CANCELAR", okButtonHandler: { (alert) in
             let pass = alert.getTextFieldWithIdentifier("pass")?.text
             let repeatPass = alert.getTextFieldWithIdentifier("repeatPass")?.text
             
             self.checkPass(pass: pass!, repeatPass: repeatPass!, alert: alert)
-            
             UserDefaults.standard.set("" , forKey: "token")
-            
         }) { (alert) in
             UserDefaults.standard.set("" , forKey: "token")
             alert.dismissAlertView()
-            
         }
         
         dialog.addTextField("pass", placeHolder: "Contraseña", isSecured: true)
@@ -86,11 +91,13 @@ class RecoverPasswordViewController: UIViewController {
         dialog.show()
     }
     
+    
     func checkPass(pass: String, repeatPass: String, alert: ZAlertView) {
+        //Se comprueban los campos en el alert
         if (pass.count) < 6 {
-            self.view.makeToast("La contraseña debe de tener como mínimo 6 carácteres" , duration: 3.0, position: .top)
+            alert.view.makeToast("La contraseña debe de tener como mínimo 6 carácteres" , duration: 3.0, position: .top)
         }else if pass != repeatPass {
-            self.view.makeToast("Las contraseñas deben de coincidir" , duration: 3.0, position: .top)
+            alert.view.makeToast("Las contraseñas deben de coincidir" , duration: 3.0, position: .top)
         }else{
             self.updatePass(pass: pass)
             alert.dismissAlertView()
@@ -98,6 +105,7 @@ class RecoverPasswordViewController: UIViewController {
     }
     
     func updatePass(pass: String) {
+        //Llamada a la API para actualizar la contraseña
         self.dataManager.postUpdatePass(params: ["pass": pass as Any], completionHandler: { (json) in
             if json.code == 201 {
                 self.performSegue(withIdentifier: "goToLogin", sender: nil)
@@ -110,5 +118,13 @@ class RecoverPasswordViewController: UIViewController {
         })
     }
     
-
+    //Funciones para mostrar y quitar el activity indicator
+    func showActivityIndicator() {
+        recoverPassBTN.isHidden = true
+        activityIndicator.startAnimating()
+    }
+    func hideActivityIndicator() {
+        activityIndicator.stopAnimating()
+        recoverPassBTN.isHidden = false
+    }
 }

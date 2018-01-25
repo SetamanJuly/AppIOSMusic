@@ -52,4 +52,14 @@ class DataManager: NSObject {
         })
     }
 
+    func getAuth(completionHandler: @escaping (_ json: JSONhttp) -> Void){
+        let requestController = RequestController()
+        
+        let url: URL = URL(string:"http://h2744356.stratoserver.net/domotics/serverIoTApi/public/index.php/base/default_auth.json")!
+        let headers: [String: String] = ["Authorization": UserDefaults.standard.value(forKey: "token") as! String]
+        
+        requestController.makePostRequest(url: url, params: [:], headers: headers, completionHandler: {(json) in
+            completionHandler(json)
+        })
+    }
 }

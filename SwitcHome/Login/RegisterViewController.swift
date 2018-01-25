@@ -17,6 +17,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordTextField: AkiraTextField!
     @IBOutlet weak var repeatPasswordTextField: AkiraTextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    //Declaración de un data manager para usar servicios
     let dataManager = DataManager()
     
     override func viewDidLoad() {
@@ -30,7 +32,7 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func userRegister(_ sender: UIButton) {
-        
+        //Se comprueban que todos los campos sean válidos y se hace la llamada a la API
         if (nameTextField.text?.isEmpty)! || (passwordTextField.text?.isEmpty)! || (emailTextField.text?.isEmpty)! {
             self.view.makeToast("Es necesario que todos los parametros esten rellenos", duration: 3.0, position: .top)
         }else if (passwordTextField.text?.count)! < 6{
@@ -46,7 +48,7 @@ class RegisterViewController: UIViewController {
     }
     
     func register(parameters: [String: Any]) {
-        
+        //Se hace la llamada a la API y se filtran los códigos de respuesta
         dataManager.postCreateUser(params: parameters) { (json) in
             if json.code == 201 {
                 self.performSegue(withIdentifier: "goToLogin", sender: nil)
@@ -60,6 +62,7 @@ class RegisterViewController: UIViewController {
         
     }
     
+    //Funciones para mostrar y quitar el activity indicator
     func showActivityIndicator() {
         RegisterButton.isHidden = true
         activityIndicator.startAnimating()

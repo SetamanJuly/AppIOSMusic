@@ -26,4 +26,5 @@ class JSONhttp: NSObject {
         self.message = message
         self.data = data
     }
+    
 }
