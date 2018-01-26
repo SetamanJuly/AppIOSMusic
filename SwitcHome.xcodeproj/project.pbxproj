@@ -11,6 +11,8 @@
 		3F1AE7A62015A41A00A396CA /* RequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1AE7A52015A41A00A396CA /* RequestController.swift */; };
 		3F1AE7A82015A4C400A396CA /* JSONhttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1AE7A72015A4C400A396CA /* JSONhttp.swift */; };
 		3F491121201826150021729A /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F491120201826150021729A /* RecoverPasswordViewController.swift */; };
+		3F87A83A201AB4F6006D77DD /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F87A839201AB4F6006D77DD /* MenuViewController.swift */; };
+		3F87A83E201ABC85006D77DD /* MenuViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F87A83D201ABC85006D77DD /* MenuViewCell.swift */; };
 		3FDCDFFF20163264005F9806 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDCDFFE20163264005F9806 /* DataManager.swift */; };
 		3FE1732920178B3500EA5C10 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1732820178B3500EA5C10 /* MainViewController.swift */; };
 		3FE1732E2017C9B200EA5C10 /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1732D2017C9B200EA5C10 /* GlobalFunctions.swift */; };
@@ -33,6 +35,8 @@
 		3F1AE7A52015A41A00A396CA /* RequestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestController.swift; sourceTree = "<group>"; };
 		3F1AE7A72015A4C400A396CA /* JSONhttp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONhttp.swift; sourceTree = "<group>"; };
 		3F491120201826150021729A /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
+		3F87A839201AB4F6006D77DD /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		3F87A83D201ABC85006D77DD /* MenuViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewCell.swift; sourceTree = "<group>"; };
 		3FDCDFFE20163264005F9806 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3FE1732820178B3500EA5C10 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3FE1732D2017C9B200EA5C10 /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
@@ -64,6 +68,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F87A836201AAEFB006D77DD /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				3FE1732820178B3500EA5C10 /* MainViewController.swift */,
+				3F87A839201AB4F6006D77DD /* MenuViewController.swift */,
+				3F87A83D201ABC85006D77DD /* MenuViewCell.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		3FE1732B2017C94B00EA5C10 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +120,7 @@
 		7FBF471A200FBCF9005F0DC4 /* SwitcHome */ = {
 			isa = PBXGroup;
 			children = (
+				3F87A836201AAEFB006D77DD /* Main */,
 				3FE1732C2017C96500EA5C10 /* Services */,
 				3FE1732B2017C94B00EA5C10 /* Login */,
 				7FBF471B200FBCF9005F0DC4 /* AppDelegate.swift */,
@@ -116,7 +131,6 @@
 				7FBF472A200FBCF9005F0DC4 /* Info.plist */,
 				7FBF4722200FBCF9005F0DC4 /* SwitcHome.xcdatamodeld */,
 				3FFE972D2016DEF900A0CC17 /* Data.swift */,
-				3FE1732820178B3500EA5C10 /* MainViewController.swift */,
 				3FE1732D2017C9B200EA5C10 /* GlobalFunctions.swift */,
 			);
 			path = SwitcHome;
@@ -294,7 +308,9 @@
 				7FBF4724200FBCF9005F0DC4 /* SwitcHome.xcdatamodeld in Sources */,
 				3F1AE7A62015A41A00A396CA /* RequestController.swift in Sources */,
 				3F491121201826150021729A /* RecoverPasswordViewController.swift in Sources */,
+				3F87A83A201AB4F6006D77DD /* MenuViewController.swift in Sources */,
 				3F1AE7822015900400A396CA /* LogInViewController.swift in Sources */,
+				3F87A83E201ABC85006D77DD /* MenuViewCell.swift in Sources */,
 				3F1AE7A82015A4C400A396CA /* JSONhttp.swift in Sources */,
 				3FFE972E2016DEF900A0CC17 /* Data.swift in Sources */,
 				7FBF4736200FC601005F0DC4 /* RegisterViewController.swift in Sources */,
