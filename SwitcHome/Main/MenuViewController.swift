@@ -53,11 +53,29 @@ let bgColorView = UIView()
         
         if indexPath.row == 0 {
             
-            navigationController?.popToRootViewController(animated: false)
+            let targetView = self.storyboard!.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+            targetView.navigationController?.popToRootViewController(animated: false)
+            dismiss(animated: true, completion: nil)
+            
 //            performSegue(withIdentifier: "goToMain", sender: nil)
 //            let rootViewController = self.storyboard!.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
 //            let navController = UINavigationController(rootViewController: rootViewController) // Creating a navigation controller with VC1 at the root of the navigation stack.
 //            self.present(navController, animated:true, completion: nil)
+        }else if indexPath.row == 1 {
+            let rootView = self.storyboard!.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+            let targetView = self.storyboard!.instantiateViewController(withIdentifier: "FunctionsViewController") as! FunctionsViewController
+        targetView.navigationController?.popToRootViewController(animated: false)
+            
+            
+            rootView.performSegue(withIdentifier: "goToFunctions", sender: nil)
+
+        }else if indexPath.row == 4{
+            let rootView = self.storyboard!.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+            let targetView = self.storyboard!.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        targetView.navigationController?.popToRootViewController(animated: false)
+            
+            rootView.performSegue(withIdentifier: "goToProfile", sender: nil)
+            
         }else if indexPath.row == menuText.count-1 {
             UserDefaults.standard.set("" , forKey: "token")
             performSegue(withIdentifier: "exitToLogin", sender: nil)

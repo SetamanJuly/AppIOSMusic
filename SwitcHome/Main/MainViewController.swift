@@ -28,8 +28,7 @@ class MainViewController: UIViewController {
 //        userImage.layer.borderWidth = 5
         initializeUsername()
     }
-    @IBAction func showMenu(_ sender: UIButton) {
-        
+    @IBAction func showMenu(_ sender: UIButton) { 
         present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
     }
 
