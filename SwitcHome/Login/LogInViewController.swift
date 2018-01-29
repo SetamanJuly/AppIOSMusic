@@ -21,9 +21,7 @@ class LogInViewController: UIViewController {
     
     //Declaración de un data manager para usar servicios
     let dataManager = DataManager()
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        checkLog()
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         nameTextField.backgroundColor = UIColor.clear
@@ -71,18 +69,17 @@ class LogInViewController: UIViewController {
     }
     
     func checkLog() {
-//        if UserDefaults.standard.value(forKey: "token") as! String != "" {
+        if UserDefaults.standard.value(forKey: "token") as! String != "" {
             dataManager.getAuth { (json) in
-                if json.code == 201 {
+                if json.code == 200 {
                     self.performSegue(withIdentifier: "goToMain", sender: nil)
                 } else if json.code == 401 || json.code == 419{
-//                    self.view.makeToast(json.message , duration: 3.0, position: .top)
                     
                 } else if json.code == 400 || json.code == 500 {
                     print(String(describing:json.message))
                 }
             }
-//        }
+        }
     }
     
     //Funciones para mostrar y quitar el activity indicator

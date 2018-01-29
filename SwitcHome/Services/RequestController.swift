@@ -20,6 +20,7 @@ class RequestController: NSObject {
                     let json = resp.result.value as! NSDictionary
                     requestResponse = JSONhttp(json: json as! [String : Any])
                     completionHandler(requestResponse)
+                
             }else{
                 completionHandler(JSONhttp(code: 500, message: "No se ha podido conectar con el servidor, pruebe mas tarde", data: [:]) )
             }

@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import SideMenu
 
 class MenuViewController: UITableViewController {
-
+var menuText: [String] = ["Inicio", "Funciones rápidas", "Mis dispositivos", "Mis configuraciones", "Mi perfil", "Cerrar sesión"]
+let bgColorView = UIView()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        bgColorView.backgroundColor = #colorLiteral(red: 0.009957599454, green: 0.59536165, blue: 0.981543839, alpha: 1)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -20,33 +24,45 @@ class MenuViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return menuText.count/menuText.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        return menuText.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath) as! MenuViewCell
+        cell.menuText.text = menuText[indexPath.row]
+        
+        cell.selectedBackgroundView = bgColorView;
+        if indexPath.row == menuText.count-1 {
+            cell.menuText.textColor = #colorLiteral(red: 1, green: 0.1568467882, blue: 0, alpha: 1)
+        }
 
-        // Configure the cell...
 
         return cell
     }
-    */
-
+ 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.row == 0 {
+            
+            navigationController?.popToRootViewController(animated: false)
+//            performSegue(withIdentifier: "goToMain", sender: nil)
+//            let rootViewController = self.storyboard!.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+//            let navController = UINavigationController(rootViewController: rootViewController) // Creating a navigation controller with VC1 at the root of the navigation stack.
+//            self.present(navController, animated:true, completion: nil)
+        }else if indexPath.row == menuText.count-1 {
+            UserDefaults.standard.set("" , forKey: "token")
+            performSegue(withIdentifier: "exitToLogin", sender: nil)
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
