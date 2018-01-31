@@ -74,9 +74,9 @@ class RecoverPasswordViewController: UIViewController {
             let repeatPass = alert.getTextFieldWithIdentifier("repeatPass")?.text
             
             self.checkPass(pass: pass!, repeatPass: repeatPass!, alert: alert)
-            UserDefaults.standard.set("" , forKey: "token")
+            UserDefaults.standard.set(nil , forKey: "token")
         }) { (alert) in
-            UserDefaults.standard.set("" , forKey: "token")
+            UserDefaults.standard.set(nil , forKey: "token")
             alert.dismissAlertView()
         }
         

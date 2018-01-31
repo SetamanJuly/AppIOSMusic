@@ -24,6 +24,9 @@ class LogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkTheme()
+        checkFollow()
+        
         nameTextField.backgroundColor = UIColor.clear
         passwordTextField.backgroundColor = UIColor.clear
         loginBTNOulet.layer.cornerRadius = 20
@@ -69,7 +72,7 @@ class LogInViewController: UIViewController {
     }
     
     func checkLog() {
-        if UserDefaults.standard.value(forKey: "token") as! String != "" {
+        if UserDefaults.standard.value(forKey: "token") as? String != nil {
             dataManager.getAuth { (json) in
                 if json.code == 200 {
                     self.performSegue(withIdentifier: "goToMain", sender: nil)
@@ -91,6 +94,24 @@ class LogInViewController: UIViewController {
     func hideActivityIndicator() {
         activityIndicator.stopAnimating()
         loginBTNOulet.isHidden = false
+    }
+    
+    func checkTheme() {
+        let appStyle = UserDefaults.standard.value(forKey: "appStyle")
+        if appStyle == nil {
+            UserDefaults.standard.set("night", forKey: "appStyle")
+        }else{
+            //cambiar colores en función del estilo de la app
+        }
+    }
+    
+    func checkFollow() {
+        let follow = UserDefaults.standard.value(forKey: "follow")
+        if follow == nil {
+            UserDefaults.standard.set(false, forKey: "follow")
+        }else{
+            //Configurar posición
+        }
     }
 
 }

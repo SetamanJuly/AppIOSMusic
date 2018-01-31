@@ -22,7 +22,7 @@ class RequestController: NSObject {
                     completionHandler(requestResponse)
                 
             }else{
-                completionHandler(JSONhttp(code: 500, message: "No se ha podido conectar con el servidor, pruebe mas tarde", data: [:]) )
+                completionHandler(JSONhttp(code: 419, message: "No se ha podido conectar con el servidor, pruebe mas tarde", data: [:]) )
             }
         })
     }
@@ -37,7 +37,7 @@ class RequestController: NSObject {
                 requestResponse = JSONhttp(json: json as! [String : Any])
                 completionHandler(requestResponse)
             }else{
-                completionHandler(JSONhttp(code: 500, message: "No se ha podido conectar con el servidor, pruebe mas tarde", data: [:]) )
+                completionHandler(JSONhttp(code: 419, message: "No se ha podido conectar con el servidor, pruebe mas tarde", data: [:]) )
             }
         })
     }

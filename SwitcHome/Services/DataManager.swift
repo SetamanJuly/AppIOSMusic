@@ -62,4 +62,6 @@ class DataManager: NSObject {
             completionHandler(json)
         })
     }
+    
+
 }

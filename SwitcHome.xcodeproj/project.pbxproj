@@ -15,10 +15,10 @@
 		3F87A83E201ABC85006D77DD /* MenuViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F87A83D201ABC85006D77DD /* MenuViewCell.swift */; };
 		3FDCDFFF20163264005F9806 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDCDFFE20163264005F9806 /* DataManager.swift */; };
 		3FE1732920178B3500EA5C10 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1732820178B3500EA5C10 /* MainViewController.swift */; };
-		3FE1732E2017C9B200EA5C10 /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1732D2017C9B200EA5C10 /* GlobalFunctions.swift */; };
+		3FE1732E2017C9B200EA5C10 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1732D2017C9B200EA5C10 /* Utils.swift */; };
 		3FF5DD25201F79520042DC9B /* FunctionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF5DD24201F79520042DC9B /* FunctionsViewController.swift */; };
 		3FF5DD28201F7BA70042DC9B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF5DD27201F7BA70042DC9B /* ProfileViewController.swift */; };
-		3FFE972E2016DEF900A0CC17 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE972D2016DEF900A0CC17 /* Data.swift */; };
+		3FFE972E2016DEF900A0CC17 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE972D2016DEF900A0CC17 /* Shared.swift */; };
 		7FBF471C200FBCF9005F0DC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBF471B200FBCF9005F0DC4 /* AppDelegate.swift */; };
 		7FBF471E200FBCF9005F0DC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBF471D200FBCF9005F0DC4 /* ViewController.swift */; };
 		7FBF4721200FBCF9005F0DC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FBF471F200FBCF9005F0DC4 /* Main.storyboard */; };
@@ -41,10 +41,10 @@
 		3F87A83D201ABC85006D77DD /* MenuViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewCell.swift; sourceTree = "<group>"; };
 		3FDCDFFE20163264005F9806 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3FE1732820178B3500EA5C10 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		3FE1732D2017C9B200EA5C10 /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
+		3FE1732D2017C9B200EA5C10 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		3FF5DD24201F79520042DC9B /* FunctionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionsViewController.swift; sourceTree = "<group>"; };
 		3FF5DD27201F7BA70042DC9B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		3FFE972D2016DEF900A0CC17 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		3FFE972D2016DEF900A0CC17 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		7FBF4718200FBCF9005F0DC4 /* SwitcHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwitcHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FBF471B200FBCF9005F0DC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FBF471D200FBCF9005F0DC4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -152,8 +152,8 @@
 				7FBF4727200FBCF9005F0DC4 /* LaunchScreen.storyboard */,
 				7FBF472A200FBCF9005F0DC4 /* Info.plist */,
 				7FBF4722200FBCF9005F0DC4 /* SwitcHome.xcdatamodeld */,
-				3FFE972D2016DEF900A0CC17 /* Data.swift */,
-				3FE1732D2017C9B200EA5C10 /* GlobalFunctions.swift */,
+				3FFE972D2016DEF900A0CC17 /* Shared.swift */,
+				3FE1732D2017C9B200EA5C10 /* Utils.swift */,
 			);
 			path = SwitcHome;
 			sourceTree = "<group>";
@@ -323,7 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FE1732E2017C9B200EA5C10 /* GlobalFunctions.swift in Sources */,
+				3FE1732E2017C9B200EA5C10 /* Utils.swift in Sources */,
 				7FBF471E200FBCF9005F0DC4 /* ViewController.swift in Sources */,
 				3FDCDFFF20163264005F9806 /* DataManager.swift in Sources */,
 				7FBF471C200FBCF9005F0DC4 /* AppDelegate.swift in Sources */,
@@ -336,7 +336,7 @@
 				3FF5DD25201F79520042DC9B /* FunctionsViewController.swift in Sources */,
 				3F87A83E201ABC85006D77DD /* MenuViewCell.swift in Sources */,
 				3F1AE7A82015A4C400A396CA /* JSONhttp.swift in Sources */,
-				3FFE972E2016DEF900A0CC17 /* Data.swift in Sources */,
+				3FFE972E2016DEF900A0CC17 /* Shared.swift in Sources */,
 				7FBF4736200FC601005F0DC4 /* RegisterViewController.swift in Sources */,
 				3FE1732920178B3500EA5C10 /* MainViewController.swift in Sources */,
 			);
