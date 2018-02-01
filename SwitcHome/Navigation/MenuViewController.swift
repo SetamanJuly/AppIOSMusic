@@ -13,9 +13,12 @@ class MenuViewController: UITableViewController {
     var menuText: [String] = ["Inicio", "Funciones rápidas", "Mis dispositivos", "Mis configuraciones", "Mi perfil", "Cerrar sesión"]
     let bgColorView = UIView()
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bgColorView.backgroundColor = #colorLiteral(red: 0.009957599454, green: 0.59536165, blue: 0.981543839, alpha: 1)
+        
     }
 
 

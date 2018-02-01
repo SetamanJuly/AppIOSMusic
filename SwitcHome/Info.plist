@@ -51,5 +51,9 @@
 		<string>Michroma.ttf</string>
 		<string>Roboto-Regular.ttf</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) is using the camera to set a profile image</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>$(PRODUCT_NAME) is using the library to set a profile image</string>
 </dict>
 </plist>

@@ -63,5 +63,15 @@ class DataManager: NSObject {
         })
     }
     
-
+    func postUpdateUser(params: [String: Any], image: UIImage?, completionHandler: @escaping (_ json: JSONhttp) -> Void) {
+        let requestController = RequestController()
+        
+        let url: URL = URL(string:"http://h2744356.stratoserver.net/domotics/serverIoTApi/public/index.php/users/updateData.json")!
+        let headers: [String: String] = ["Content-Type": "multipart/form-data", "Authorization": UserDefaults.standard.value(forKey: "token") as! String]
+        
+        requestController.makePostRequestMultipart(url: url, params: params, headers: headers, image: image, completionHandler: {(json) in
+            
+            completionHandler(json)
+        })
+    }
 }

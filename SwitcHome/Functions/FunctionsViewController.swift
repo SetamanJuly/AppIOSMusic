@@ -27,7 +27,7 @@ class FunctionsViewController: UIViewController {
         resetBTN.layer.cornerRadius = 10
     }
 
-    @IBAction func sideMenu(_ sender: UIButton) {
+    @IBAction func sideMenu(_ sender: Any) {
         present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
     }
     @IBAction func resetAction(_ sender: UIButton) {

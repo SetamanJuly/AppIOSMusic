@@ -16,6 +16,7 @@
 		3FDCDFFF20163264005F9806 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDCDFFE20163264005F9806 /* DataManager.swift */; };
 		3FE1732920178B3500EA5C10 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1732820178B3500EA5C10 /* MainViewController.swift */; };
 		3FE1732E2017C9B200EA5C10 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1732D2017C9B200EA5C10 /* Utils.swift */; };
+		3FF3EB782022129900E535F1 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3EB772022129900E535F1 /* MainNavigationController.swift */; };
 		3FF5DD25201F79520042DC9B /* FunctionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF5DD24201F79520042DC9B /* FunctionsViewController.swift */; };
 		3FF5DD28201F7BA70042DC9B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF5DD27201F7BA70042DC9B /* ProfileViewController.swift */; };
 		3FFE972E2016DEF900A0CC17 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE972D2016DEF900A0CC17 /* Shared.swift */; };
@@ -42,6 +43,7 @@
 		3FDCDFFE20163264005F9806 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3FE1732820178B3500EA5C10 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3FE1732D2017C9B200EA5C10 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		3FF3EB772022129900E535F1 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		3FF5DD24201F79520042DC9B /* FunctionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionsViewController.swift; sourceTree = "<group>"; };
 		3FF5DD27201F7BA70042DC9B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3FFE972D2016DEF900A0CC17 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
@@ -76,8 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				3FE1732820178B3500EA5C10 /* MainViewController.swift */,
-				3F87A839201AB4F6006D77DD /* MenuViewController.swift */,
-				3F87A83D201ABC85006D77DD /* MenuViewCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -100,6 +100,16 @@
 				3FDCDFFE20163264005F9806 /* DataManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		3FF3EB762022125500E535F1 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				3F87A839201AB4F6006D77DD /* MenuViewController.swift */,
+				3F87A83D201ABC85006D77DD /* MenuViewCell.swift */,
+				3FF3EB772022129900E535F1 /* MainNavigationController.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		3FF5DD23201F792E0042DC9B /* Functions */ = {
@@ -140,6 +150,7 @@
 		7FBF471A200FBCF9005F0DC4 /* SwitcHome */ = {
 			isa = PBXGroup;
 			children = (
+				3FF3EB762022125500E535F1 /* Navigation */,
 				3FF5DD26201F7B950042DC9B /* Profile */,
 				3FF5DD23201F792E0042DC9B /* Functions */,
 				3F87A836201AAEFB006D77DD /* Main */,
@@ -331,6 +342,7 @@
 				3F1AE7A62015A41A00A396CA /* RequestController.swift in Sources */,
 				3FF5DD28201F7BA70042DC9B /* ProfileViewController.swift in Sources */,
 				3F491121201826150021729A /* RecoverPasswordViewController.swift in Sources */,
+				3FF3EB782022129900E535F1 /* MainNavigationController.swift in Sources */,
 				3F87A83A201AB4F6006D77DD /* MenuViewController.swift in Sources */,
 				3F1AE7822015900400A396CA /* LogInViewController.swift in Sources */,
 				3FF5DD25201F79520042DC9B /* FunctionsViewController.swift in Sources */,
