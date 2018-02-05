@@ -10,8 +10,7 @@
 #endif
 #endif
 
-#import "KohanaTextField.h"
 
-FOUNDATION_EXPORT double KohanaTextFieldVersionNumber;
-FOUNDATION_EXPORT const unsigned char KohanaTextFieldVersionString[];
+FOUNDATION_EXPORT double TextFieldEffectsVersionNumber;
+FOUNDATION_EXPORT const unsigned char TextFieldEffectsVersionString[];
 

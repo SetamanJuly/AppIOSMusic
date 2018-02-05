@@ -17,7 +17,6 @@
 		3FE1732920178B3500EA5C10 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1732820178B3500EA5C10 /* MainViewController.swift */; };
 		3FE1732E2017C9B200EA5C10 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1732D2017C9B200EA5C10 /* Utils.swift */; };
 		3FF3EB782022129900E535F1 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3EB772022129900E535F1 /* MainNavigationController.swift */; };
-		3FF5DD25201F79520042DC9B /* FunctionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF5DD24201F79520042DC9B /* FunctionsViewController.swift */; };
 		3FF5DD28201F7BA70042DC9B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF5DD27201F7BA70042DC9B /* ProfileViewController.swift */; };
 		3FFE972E2016DEF900A0CC17 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE972D2016DEF900A0CC17 /* Shared.swift */; };
 		7FBF471C200FBCF9005F0DC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBF471B200FBCF9005F0DC4 /* AppDelegate.swift */; };
@@ -44,7 +43,6 @@
 		3FE1732820178B3500EA5C10 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3FE1732D2017C9B200EA5C10 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		3FF3EB772022129900E535F1 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
-		3FF5DD24201F79520042DC9B /* FunctionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionsViewController.swift; sourceTree = "<group>"; };
 		3FF5DD27201F7BA70042DC9B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3FFE972D2016DEF900A0CC17 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		7FBF4718200FBCF9005F0DC4 /* SwitcHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwitcHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,14 +110,6 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
-		3FF5DD23201F792E0042DC9B /* Functions */ = {
-			isa = PBXGroup;
-			children = (
-				3FF5DD24201F79520042DC9B /* FunctionsViewController.swift */,
-			);
-			path = Functions;
-			sourceTree = "<group>";
-		};
 		3FF5DD26201F7B950042DC9B /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,7 +142,6 @@
 			children = (
 				3FF3EB762022125500E535F1 /* Navigation */,
 				3FF5DD26201F7B950042DC9B /* Profile */,
-				3FF5DD23201F792E0042DC9B /* Functions */,
 				3F87A836201AAEFB006D77DD /* Main */,
 				3FE1732C2017C96500EA5C10 /* Services */,
 				3FE1732B2017C94B00EA5C10 /* Login */,
@@ -345,7 +334,6 @@
 				3FF3EB782022129900E535F1 /* MainNavigationController.swift in Sources */,
 				3F87A83A201AB4F6006D77DD /* MenuViewController.swift in Sources */,
 				3F1AE7822015900400A396CA /* LogInViewController.swift in Sources */,
-				3FF5DD25201F79520042DC9B /* FunctionsViewController.swift in Sources */,
 				3F87A83E201ABC85006D77DD /* MenuViewCell.swift in Sources */,
 				3F1AE7A82015A4C400A396CA /* JSONhttp.swift in Sources */,
 				3FFE972E2016DEF900A0CC17 /* Shared.swift in Sources */,
@@ -492,7 +480,7 @@
 				"HEADER_SEARCH_PATHS[arch=*]" = " $(SRCROOT)/Pods ";
 				INFOPLIST_FILE = SwitcHome/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.DomoticSolutions.SwitcHome;
+				PRODUCT_BUNDLE_IDENTIFIER = com.julianparrilla.SwitcHome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -508,7 +496,7 @@
 				"HEADER_SEARCH_PATHS[arch=*]" = " $(SRCROOT)/Pods ";
 				INFOPLIST_FILE = SwitcHome/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.DomoticSolutions.SwitcHome;
+				PRODUCT_BUNDLE_IDENTIFIER = com.julianparrilla.SwitcHome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
